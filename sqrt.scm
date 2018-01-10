@@ -4,5 +4,8 @@
 
 
 (define (sqrt-iterer guess x)
-   (if  (< (- (* guess guess) x) 0.001) (guess) (sqrt-iterer (/ (+ (/ x guess) guess)) x)
+   (if (< (abs (- (* guess guess) x)) 0.001) 
+       guess 
+       (sqrt-iterer (/ (+ (/ x guess) guess) 2) x)
+   )
 )
